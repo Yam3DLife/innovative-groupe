@@ -1,0 +1,774 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #0a0e2a 0%, #0f1235 50%, #1a1a4a 100%);
+    color: #ffffff;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===== ЕДИНЫЙ HEADER ДЛЯ ВСЕХ СТРАНИЦ ===== */
+.main-header {
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(0, 180, 216, 0.2);
+    position: sticky;
+    top: 0;
+    background: rgba(10, 14, 42, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #00b4d8, #7b2cbf);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.logo-text h2 {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.logo-text h2 span {
+    background: linear-gradient(135deg, #00b4d8, #c77dff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.logo-text p {
+    font-size: 10px;
+    opacity: 0.7;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+.nav-links a:hover {
+    background: rgba(0, 180, 216, 0.2);
+    color: #00b4d8;
+}
+
+.main-menu-btn a {
+    background: linear-gradient(135deg, #00b4d8, #7b2cbf);
+    padding: 8px 20px;
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.main-menu-btn a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 180, 216, 0.4);
+}
+
+/* ===== Hero секция (главная) ===== */
+.hero {
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.gradient-text {
+    background: linear-gradient(135deg, #00b4d8, #c77dff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero-content p {
+    font-size: 18px;
+    opacity: 0.8;
+    margin-bottom: 30px;
+    max-width: 500px;
+}
+
+.btn-primary {
+    display: inline-block;
+    background: linear-gradient(135deg, #00b4d8, #7b2cbf);
+    padding: 12px 30px;
+    border-radius: 30px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(0, 180, 216, 0.4);
+}
+
+.btn-outline {
+    display: inline-block;
+    border: 2px solid #00b4d8;
+    padding: 10px 24px;
+    border-radius: 30px;
+    color: #00b4d8;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+    background: #00b4d8;
+    color: #0a0e2a;
+}
+
+.hero-graphic {
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.6;
+}
+
+.circle-1 {
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(circle, #00b4d8, transparent);
+    top: 50px;
+    left: 50px;
+}
+
+.circle-2 {
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, #7b2cbf, transparent);
+    bottom: 20px;
+    right: 20px;
+}
+
+.circle-3 {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, #c77dff, transparent);
+    top: 0;
+    right: 0;
+}
+
+/* ===== Секции ===== */
+.about {
+    padding: 80px 0;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+h2 {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.stat {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 32px;
+    font-weight: 800;
+    color: #00b4d8;
+}
+
+.stat-label {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+.about-values {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.value-card {
+    background: rgba(0, 180, 216, 0.1);
+    padding: 20px;
+    border-radius: 16px;
+    border-left: 4px solid #00b4d8;
+}
+
+.value-card h3 {
+    margin-bottom: 10px;
+    color: #00b4d8;
+}
+
+/* ===== Превью компаний ===== */
+.preview-companies {
+    padding: 80px 0;
+}
+
+.preview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.preview-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 180, 216, 0.2);
+}
+
+.preview-card:hover {
+    transform: translateY(-5px);
+    border-color: #00b4d8;
+    box-shadow: 0 10px 30px rgba(0, 180, 216, 0.2);
+}
+
+.preview-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.preview-card h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.link-arrow {
+    display: inline-block;
+    margin-top: 20px;
+    color: #00b4d8;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* ===== Страница списка компаний ===== */
+.page-header {
+    padding: 60px 0 40px;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.companies-list {
+    padding: 0 0 80px;
+}
+
+.companies-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.company-item {
+    display: flex;
+    gap: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+    padding: 30px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 180, 216, 0.2);
+}
+
+.company-item:hover {
+    transform: translateX(5px);
+    border-color: #00b4d8;
+}
+
+.company-logo {
+    flex-shrink: 0;
+}
+
+.logo-placeholder {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #00b4d8, #7b2cbf);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+}
+
+.company-info {
+    flex: 1;
+}
+
+.company-name {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.company-details {
+    margin-bottom: 20px;
+}
+
+.company-details p {
+    margin-bottom: 8px;
+    opacity: 0.8;
+}
+
+/* ===== Страница компании ===== */
+.company-hero {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.company-icon {
+    font-size: 80px;
+    margin-bottom: 20px;
+}
+
+.company-hero h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.company-hero p {
+    font-size: 20px;
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+
+.company-meta {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.company-meta span {
+    background: rgba(0, 180, 216, 0.2);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.company-description {
+    padding: 0 0 80px;
+}
+
+.description-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.description-text h2 {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.description-text h3 {
+    margin: 25px 0 15px;
+    color: #00b4d8;
+}
+
+.description-text ul {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.description-text li {
+    margin-bottom: 10px;
+    padding-left: 24px;
+    position: relative;
+}
+
+.description-text li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: #00b4d8;
+}
+
+.description-features {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.feature {
+    background: rgba(0, 180, 216, 0.1);
+    padding: 25px;
+    border-radius: 16px;
+    text-align: center;
+}
+
+.feature h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #00b4d8;
+}
+
+.platform-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* ===== FOOTER ===== */
+footer {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 50px 0 30px;
+    margin-top: 60px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.footer-logo h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.footer-logo h3 span {
+    color: #00b4d8;
+}
+
+.footer-links h4, .footer-contact h4 {
+    margin-bottom: 15px;
+    color: #00b4d8;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+    color: #00b4d8;
+}
+
+.footer-contact p {
+    opacity: 0.7;
+    margin-bottom: 8px;
+}
+
+/* ===== Адаптивность ===== */
+@media (max-width: 768px) {
+    .hero .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .about-grid,
+    .description-grid,
+    .company-item {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+    }
+    
+    .header-nav {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .main-header .container {
+        flex-direction: column;
+    }
+    
+    .company-item {
+        text-align: center;
+    }
+    
+    .company-logo {
+        margin: 0 auto;
+    }
+/* ===== ТАРИФЫ ===== */
+.tariffs {
+    padding: 60px 0;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.section-subtitle {
+    text-align: center;
+    opacity: 0.7;
+    margin-bottom: 50px;
+}
+
+.tariffs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.tariff-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    border: 1px solid rgba(0, 180, 216, 0.2);
+}
+
+.tariff-card:hover {
+    transform: translateY(-10px);
+    border-color: #00b4d8;
+    box-shadow: 0 20px 40px rgba(0, 180, 216, 0.2);
+}
+
+.tariff-card.vip {
+    background: linear-gradient(135deg, rgba(123, 44, 191, 0.2), rgba(0, 180, 216, 0.1));
+    border-color: #7b2cbf;
+}
+
+.tariff-card.lite {
+    border-color: #00b4d8;
+}
+
+.tariff-card.trial {
+    border-color: #c77dff;
+}
+
+.tariff-badge {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background: linear-gradient(135deg, #00b4d8, #7b2cbf);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.tariff-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.tariff-card h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.tariff-price {
+    margin-bottom: 20px;
+}
+
+.price {
+    font-size: 36px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #00b4d8, #c77dff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.period {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+.tariff-features {
+    list-style: none;
+    margin: 25px 0;
+    text-align: left;
+}
+
+.tariff-features li {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.btn-tariff {
+    display: inline-block;
+    background: rgba(0, 180, 216, 0.2);
+    padding: 12px 30px;
+    border-radius: 30px;
+    color: #00b4d8;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-tariff:hover {
+    background: #00b4d8;
+    color: #0a0e2a;
+}
+
+.tariff-note {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background: rgba(0, 180, 216, 0.1);
+    border-radius: 16px;
+}
+
+.tariff-note p {
+    margin: 5px 0;
+    opacity: 0.8;
+    font-size: 14px;
+}
+
+/* ===== КАК ПОДКЛЮЧИТЬСЯ ===== */
+.how-to-connect {
+    padding: 60px 0;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.step {
+    text-align: center;
+    padding: 20px;
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #00b4d8, #7b2cbf);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 800;
+    margin: 0 auto 20px;
+}
+
+.step h3 {
+    margin-bottom: 10px;
+}
+
+.step p {
+    opacity: 0.7;
+    font-size: 14px;
+}
+
+.connect-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* ===== Адаптивность для тарифов ===== */
+@media (max-width: 768px) {
+    .tariffs-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .connect-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
