@@ -489,6 +489,187 @@ h2 {
     margin-top: 20px;
 }
 
+/* ===== ТАРИФЫ ===== */
+.tariffs {
+    padding: 60px 0;
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.section-subtitle {
+    text-align: center;
+    opacity: 0.7;
+    margin-bottom: 50px;
+}
+
+.tariffs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.tariff-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    border: 1px solid rgba(0, 180, 216, 0.2);
+}
+
+.tariff-card:hover {
+    transform: translateY(-10px);
+    border-color: #00b4d8;
+    box-shadow: 0 20px 40px rgba(0, 180, 216, 0.2);
+}
+
+/* Цвета для разных тарифов */
+.tariff-card.trial { border-color: #c77dff; }
+.tariff-card.lite { border-color: #00b4d8; }
+.tariff-card.vip { background: linear-gradient(135deg, rgba(123, 44, 191, 0.2), rgba(0, 180, 216, 0.1)); border-color: #7b2cbf; }
+.tariff-card.ultra { border-color: #ff6b35; }
+.tariff-card.family { border-color: #20b2aa; }
+.tariff-card.premium { border-color: #ffd700; }
+.tariff-card.red { border-color: #ff4444; }
+.tariff-card.green { border-color: #44ff44; }
+.tariff-card.super { border-color: #ff69b4; }
+
+.tariff-badge {
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background: linear-gradient(135deg, #00b4d8, #7b2cbf);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.tariff-icon {
+    font-size: 48px;
+    margin-bottom: 15px;
+}
+
+.tariff-card h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.tariff-price {
+    margin-bottom: 20px;
+}
+
+.price {
+    font-size: 36px;
+    font-weight: 800;
+    background: linear-gradient(135deg, #00b4d8, #c77dff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.period {
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+.tariff-features {
+    list-style: none;
+    margin: 25px 0;
+    text-align: left;
+}
+
+.tariff-features li {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.btn-tariff {
+    display: inline-block;
+    background: rgba(0, 180, 216, 0.2);
+    padding: 12px 30px;
+    border-radius: 30px;
+    color: #00b4d8;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.tariff-card:hover .btn-tariff {
+    background: #00b4d8;
+    color: #0a0e2a;
+}
+
+.tariff-card.vip .btn-tariff:hover,
+.tariff-card.ultra .btn-tariff:hover,
+.tariff-card.premium .btn-tariff:hover {
+    background: #7b2cbf;
+    color: white;
+}
+
+.tariff-note {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    background: rgba(0, 180, 216, 0.1);
+    border-radius: 16px;
+}
+
+.tariff-note p {
+    margin: 5px 0;
+    opacity: 0.8;
+    font-size: 14px;
+}
+
+/* ===== КАК ПОДКЛЮЧИТЬСЯ ===== */
+.how-to-connect {
+    padding: 60px 0;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.step {
+    text-align: center;
+    padding: 20px;
+}
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, #00b4d8, #7b2cbf);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 800;
+    margin: 0 auto 20px;
+}
+
+.step h3 {
+    margin-bottom: 10px;
+}
+
+.step p {
+    opacity: 0.7;
+    font-size: 14px;
+}
+
+.connect-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
 /* ===== FOOTER ===== */
 footer {
     background: rgba(0, 0, 0, 0.3);
@@ -581,184 +762,7 @@ footer {
     .company-logo {
         margin: 0 auto;
     }
-/* ===== ТАРИФЫ ===== */
-.tariffs {
-    padding: 60px 0;
-    background: rgba(255, 255, 255, 0.02);
-}
-
-.section-subtitle {
-    text-align: center;
-    opacity: 0.7;
-    margin-bottom: 50px;
-}
-
-.tariffs-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-.tariff-card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    border-radius: 24px;
-    padding: 30px;
-    text-align: center;
-    transition: all 0.3s ease;
-    position: relative;
-    border: 1px solid rgba(0, 180, 216, 0.2);
-}
-
-.tariff-card:hover {
-    transform: translateY(-10px);
-    border-color: #00b4d8;
-    box-shadow: 0 20px 40px rgba(0, 180, 216, 0.2);
-}
-
-.tariff-card.vip {
-    background: linear-gradient(135deg, rgba(123, 44, 191, 0.2), rgba(0, 180, 216, 0.1));
-    border-color: #7b2cbf;
-}
-
-.tariff-card.lite {
-    border-color: #00b4d8;
-}
-
-.tariff-card.trial {
-    border-color: #c77dff;
-}
-
-.tariff-badge {
-    position: absolute;
-    top: -12px;
-    right: 20px;
-    background: linear-gradient(135deg, #00b4d8, #7b2cbf);
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 12px;
-    font-weight: 600;
-}
-
-.tariff-icon {
-    font-size: 48px;
-    margin-bottom: 15px;
-}
-
-.tariff-card h3 {
-    font-size: 28px;
-    margin-bottom: 15px;
-}
-
-.tariff-price {
-    margin-bottom: 20px;
-}
-
-.price {
-    font-size: 36px;
-    font-weight: 800;
-    background: linear-gradient(135deg, #00b4d8, #c77dff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-
-.period {
-    font-size: 14px;
-    opacity: 0.7;
-}
-
-.tariff-features {
-    list-style: none;
-    margin: 25px 0;
-    text-align: left;
-}
-
-.tariff-features li {
-    margin-bottom: 10px;
-    font-size: 14px;
-}
-
-.btn-tariff {
-    display: inline-block;
-    background: rgba(0, 180, 216, 0.2);
-    padding: 12px 30px;
-    border-radius: 30px;
-    color: #00b4d8;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-}
-
-.btn-tariff:hover {
-    background: #00b4d8;
-    color: #0a0e2a;
-}
-
-.tariff-note {
-    text-align: center;
-    margin-top: 40px;
-    padding: 20px;
-    background: rgba(0, 180, 216, 0.1);
-    border-radius: 16px;
-}
-
-.tariff-note p {
-    margin: 5px 0;
-    opacity: 0.8;
-    font-size: 14px;
-}
-
-/* ===== КАК ПОДКЛЮЧИТЬСЯ ===== */
-.how-to-connect {
-    padding: 60px 0;
-}
-
-.steps-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 30px;
-    margin-bottom: 40px;
-}
-
-.step {
-    text-align: center;
-    padding: 20px;
-}
-
-.step-number {
-    width: 50px;
-    height: 50px;
-    background: linear-gradient(135deg, #00b4d8, #7b2cbf);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    font-weight: 800;
-    margin: 0 auto 20px;
-}
-
-.step h3 {
-    margin-bottom: 10px;
-}
-
-.step p {
-    opacity: 0.7;
-    font-size: 14px;
-}
-
-.connect-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-/* ===== Адаптивность для тарифов ===== */
-@media (max-width: 768px) {
+    
     .tariffs-grid {
         grid-template-columns: 1fr;
     }
