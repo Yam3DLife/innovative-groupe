@@ -501,11 +501,11 @@ h2 {
     margin-bottom: 50px;
 }
 
-.tariffs-grid {
+.tariffs-grid-2col {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
     gap: 30px;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -517,25 +517,13 @@ h2 {
     text-align: center;
     transition: all 0.3s ease;
     position: relative;
-    border: 1px solid rgba(0, 180, 216, 0.2);
+    border: 2px solid rgba(0, 180, 216, 0.3);
 }
 
 .tariff-card:hover {
     transform: translateY(-10px);
-    border-color: #00b4d8;
-    box-shadow: 0 20px 40px rgba(0, 180, 216, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 180, 216, 0.3);
 }
-
-/* Цвета для разных тарифов */
-.tariff-card.trial { border-color: #c77dff; }
-.tariff-card.lite { border-color: #00b4d8; }
-.tariff-card.vip { background: linear-gradient(135deg, rgba(123, 44, 191, 0.2), rgba(0, 180, 216, 0.1)); border-color: #7b2cbf; }
-.tariff-card.ultra { border-color: #ff6b35; }
-.tariff-card.family { border-color: #20b2aa; }
-.tariff-card.premium { border-color: #ffd700; }
-.tariff-card.red { border-color: #ff4444; }
-.tariff-card.green { border-color: #44ff44; }
-.tariff-card.super { border-color: #ff69b4; }
 
 .tariff-badge {
     position: absolute;
@@ -555,11 +543,11 @@ h2 {
 
 .tariff-card h3 {
     font-size: 28px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .tariff-price {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .price {
@@ -576,15 +564,48 @@ h2 {
     opacity: 0.7;
 }
 
+.tariff-traffic {
+    font-size: 18px;
+    font-weight: 700;
+    color: #00b4d8;
+    margin-bottom: 15px;
+    padding: 8px;
+    background: rgba(0, 180, 216, 0.1);
+    border-radius: 20px;
+    display: inline-block;
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .tariff-features {
     list-style: none;
-    margin: 25px 0;
+    margin: 20px 0;
     text-align: left;
 }
 
 .tariff-features li {
     margin-bottom: 10px;
     font-size: 14px;
+    padding-left: 24px;
+    position: relative;
+}
+
+.tariff-features li::before {
+    content: "✅";
+    position: absolute;
+    left: 0;
+    color: #00b4d8;
+}
+
+.tariff-target {
+    font-size: 12px;
+    opacity: 0.8;
+    margin: 15px 0;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    font-style: italic;
 }
 
 .btn-tariff {
@@ -596,6 +617,7 @@ h2 {
     text-decoration: none;
     font-weight: 600;
     transition: all 0.3s ease;
+    margin-top: 10px;
 }
 
 .tariff-card:hover .btn-tariff {
@@ -603,12 +625,24 @@ h2 {
     color: #0a0e2a;
 }
 
-.tariff-card.vip .btn-tariff:hover,
-.tariff-card.ultra .btn-tariff:hover,
-.tariff-card.premium .btn-tariff:hover {
-    background: #7b2cbf;
-    color: white;
-}
+/* Цвета для разных тарифов */
+.tariff-card.lite { border-color: #ffd700; }
+.tariff-card.vip { border-color: #9b59b6; background: linear-gradient(135deg, rgba(155, 89, 182, 0.15), rgba(0, 180, 216, 0.05)); }
+.tariff-card.green { border-color: #2ecc71; }
+.tariff-card.ultra { border-color: #3498db; }
+.tariff-card.family { border-color: #1abc9c; }
+.tariff-card.premium { border-color: #e67e22; }
+.tariff-card.red { border-color: #e74c3c; }
+.tariff-card.super { border-color: #95a5a6; background: rgba(0, 0, 0, 0.3); }
+
+.tariff-card.lite .btn-tariff:hover { background: #ffd700; color: #0a0e2a; }
+.tariff-card.vip .btn-tariff:hover { background: #9b59b6; color: white; }
+.tariff-card.green .btn-tariff:hover { background: #2ecc71; color: #0a0e2a; }
+.tariff-card.ultra .btn-tariff:hover { background: #3498db; color: white; }
+.tariff-card.family .btn-tariff:hover { background: #1abc9c; color: #0a0e2a; }
+.tariff-card.premium .btn-tariff:hover { background: #e67e22; color: white; }
+.tariff-card.red .btn-tariff:hover { background: #e74c3c; color: white; }
+.tariff-card.super .btn-tariff:hover { background: #95a5a6; color: #0a0e2a; }
 
 .tariff-note {
     text-align: center;
@@ -763,7 +797,7 @@ footer {
         margin: 0 auto;
     }
     
-    .tariffs-grid {
+    .tariffs-grid-2col {
         grid-template-columns: 1fr;
     }
     
@@ -774,5 +808,17 @@ footer {
     .connect-buttons {
         flex-direction: column;
         align-items: center;
+    }
+    
+    h2 {
+        font-size: 28px;
+    }
+    
+    .hero-content h1 {
+        font-size: 32px;
+    }
+    
+    .company-hero h1 {
+        font-size: 32px;
     }
 }
