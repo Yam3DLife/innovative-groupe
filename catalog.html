@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <title>Каталог — 3D Life ЯМ</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .catalog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        .catalog-item {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 180, 216, 0.2);
+            cursor: pointer;
+        }
+        .catalog-item:hover {
+            transform: translateY(-5px);
+            border-color: #00b4d8;
+            box-shadow: 0 10px 30px rgba(0, 180, 216, 0.2);
+        }
+        .catalog-icon {
+            font-size: 60px;
+            margin-bottom: 15px;
+        }
+        .catalog-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #00b4d8;
+        }
+        .catalog-price {
+            font-size: 24px;
+            font-weight: 800;
+            color: #c77dff;
+            margin: 10px 0;
+        }
+        .catalog-desc {
+            font-size: 14px;
+            opacity: 0.7;
+            margin-bottom: 15px;
+        }
+        .btn-back {
+            display: inline-block;
+            background: linear-gradient(135deg, #00b4d8, #7b2cbf);
+            padding: 12px 30px;
+            border-radius: 30px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+        }
+        .btn-back:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0, 180, 216, 0.4);
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal.active {
+            display: flex;
+        }
+        .modal-content {
+            background: linear-gradient(135deg, #0a0e2a, #1a1a4a);
+            border-radius: 24px;
+            padding: 30px;
+            max-width: 500px;
+            width: 90%;
+            border: 2px solid #00b4d8;
+            position: relative;
+            animation: modalFadeIn 0.3s ease;
+        }
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 28px;
+            cursor: pointer;
+            color: #00b4d8;
+            transition: all 0.3s ease;
+        }
+        .modal-close:hover {
+            color: #ff4444;
+            transform: scale(1.1);
+        }
+        .modal-title {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #00b4d8;
+        }
+        .modal-price {
+            font-size: 32px;
+            font-weight: 800;
+            color: #c77dff;
+            margin: 15px 0;
+        }
+        .modal-desc {
+            margin: 15px 0;
+            line-height: 1.6;
+        }
+        .modal-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #00b4d8, #7b2cbf);
+            padding: 10px 25px;
+            border-radius: 30px;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+        }
+        .modal-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 180, 216, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="container">
+            <div class="header-left">
+                <div class="logo-icon">
+                    <img src="images/logo-3dlife.png" alt="3D Life ЯМ" width="40" height="40">
+                </div>
+                <div class="logo-text">
+                    <h2>3D Life<span>ЯМ</span></h2>
+                    <p>3D печать и моделирование</p>
+                </div>
+            </div>
+            <div class="header-nav">
+                <ul class="nav-links">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="companies.html">Наши компании</a></li>
+                    <li><a href="company-3d-life.html">3D Life</a></li>
+                </ul>
+                <div class="main-menu-btn">
+                    <a href="index.html">В основное меню</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>📦 Каталог 3D-печати</h1>
+                <p>Выберите то, что хотите создать</p>
+                <a href="company-3d-life.html" class="btn-back">← Вернуться в 3D Life</a>
+            </div>
+        </section>
+
+        <section class="companies-list">
+            <div class="container">
+                <div class="catalog-grid">
+                    <div class="catalog-item" data-product="figurka">
+                        <div class="catalog-icon">🗿</div>
+                        <h3 class="catalog-title">Кастомная фигурка</h3>
+                        <div class="catalog-price">от 1 500 ₽</div>
+                        <p class="catalog-desc">Индивидуальный дизайн, высокая детализация</p>
+                    </div>
+                    <div class="catalog-item" data-product="keychain">
+                        <div class="catalog-icon">🔑</div>
+                        <h3 class="catalog-title">Брелок с логотипом</h3>
+                        <div class="catalog-price">от 500 ₽</div>
+                        <p class="catalog-desc">Любая форма, цвет, объёмная печать</p>
+                    </div>
+                    <div class="catalog-item" data-product="case">
+                        <div class="catalog-icon">📱</div>
+                        <h3 class="catalog-title">Чехол для телефона</h3>
+                        <div class="catalog-price">от 800 ₽</div>
+                        <p class="catalog-desc">Индивидуальный дизайн, прочный пластик</p>
+                    </div>
+                    <div class="catalog-item" data-product="prototype">
+                        <div class="catalog-icon">⚙️</div>
+                        <h3 class="catalog-title">Прототип детали</h3>
+                        <div class="catalog-price">от 2 000 ₽</div>
+                        <p class="catalog-desc">Точное копирование, доработка модели</p>
+                    </div>
+                    <div class="catalog-item" data-product="magnet">
+                        <div class="catalog-icon">🧲</div>
+                        <h3 class="catalog-title">Магнит на холодильник</h3>
+                        <div class="catalog-price">от 300 ₽</div>
+                        <p class="catalog-desc">Сувенирная продукция, логотипы, фото</p>
+                    </div>
+                    <div class="catalog-item" data-product="stand">
+                        <div class="catalog-icon">📀</div>
+                        <h3 class="catalog-title">Подставка для гаджетов</h3>
+                        <div class="catalog-price">от 700 ₽</div>
+                        <p class="catalog-desc">Для телефонов, часов, планшетов</p>
+                    </div>
+                    <div class="catalog-item" data-product="model">
+                        <div class="catalog-icon">🏠</div>
+                        <h3 class="catalog-title">Архитектурный макет</h3>
+                        <div class="catalog-price">от 5 000 ₽</div>
+                        <p class="catalog-desc">Макеты зданий, интерьеров, ландшафта</p>
+                    </div>
+                    <div class="catalog-item" data-product="cosplay">
+                        <div class="catalog-icon">🎭</div>
+                        <h3 class="catalog-title">Аксессуары для косплея</h3>
+                        <div class="catalog-price">от 2 500 ₽</div>
+                        <p class="catalog-desc">Оружие, маски, элементы костюмов</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Модальное окно -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>Innovative<span>Groupe</span></h3>
+                    <p>© 2024-2026 Все права защищены</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Навигация</h4>
+                    <ul>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="companies.html">Наши компании</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Контакты 3D Life ЯМ</h4>
+                    <p>Email: 3d@innovative-groupe.ru</p>
+                    <p>Telegram: @your_3d_support</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        const products = {
+            figurka: {
+                title: "🗿 Кастомная фигурка",
+                price: "от 1 500 ₽",
+                desc: "Индивидуальный дизайн, созданный по вашим эскизам или описанию. Высокая детализация, точность до 0.1 мм.",
+                specs: "Материалы: PLA, ABS, смола<br>Размер: от 5 до 25 см<br>Срок: от 3 дней"
+            },
+            keychain: {
+                title: "🔑 Брелок с логотипом",
+                price: "от 500 ₽",
+                desc: "Объёмный брелок с любым логотипом или текстом. Отличный сувенир для рекламы или подарка.",
+                specs: "Материалы: PLA, TPU<br>Размер: до 5 см<br>Срок: от 1 дня"
+            },
+            case: {
+                title: "📱 Чехол для телефона",
+                price: "от 800 ₽",
+                desc: "Индивидуальный чехол с 3D-печатью. Точная посадка на вашу модель телефона. Защита от ударов и царапин.",
+                specs: "Материалы: TPU, PETG<br>Срок: от 2 дней"
+            },
+            prototype: {
+                title: "⚙️ Прототип детали",
+                price: "от 2 000 ₽",
+                desc: "Точное копирование существующей детали или создание по чертежам. Идеально для тестирования и доработки.",
+                specs: "Точность: 0.1 мм<br>Срок: от 5 дней"
+            },
+            magnet: {
+                title: "🧲 Магнит на холодильник",
+                price: "от 300 ₽",
+                desc: "Сувенирные магниты с вашим дизайном. Отличный вариант для промоакций и подарков.",
+                specs: "Размер: до 8 см<br>Срок: от 1 дня"
+            },
+            stand: {
+                title: "📀 Подставка для гаджетов",
+                price: "от 700 ₽",
+                desc: "Удобные подставки для телефонов, часов, планшетов. Кастомизация под ваше устройство.",
+                specs: "Материал: PLA, PETG<br>Срок: от 1 дня"
+            },
+            model: {
+                title: "🏠 Архитектурный макет",
+                price: "от 5 000 ₽",
+                desc: "Макеты зданий, интерьеров, ландшафта для презентаций и выставок.",
+                specs: "Масштаб: любой<br>Срок: от 10 дней"
+            },
+            cosplay: {
+                title: "🎭 Аксессуары для косплея",
+                price: "от 2 500 ₽",
+                desc: "Оружие, маски, элементы костюмов по вашим 3D-моделям или референсам.",
+                specs: "Материалы: PLA, PETG, смола<br>Срок: от 7 дней"
+            }
+        };
+
+        const modal = document.getElementById('productModal');
+        const modalContent = document.getElementById('modalContent');
+        const closeModal = document.querySelector('.modal-close');
+
+        function openProduct(productId) {
+            const product = products[productId];
+            if (product) {
+                modalContent.innerHTML = `
+                    <h2 class="modal-title">${product.title}</h2>
+                    <div class="modal-price">${product.price}</div>
+                    <div class="modal-desc">${product.desc}</div>
+                    <div class="modal-desc"><strong>Характеристики:</strong><br>${product.specs}</div>
+                    <a href="https://t.me/your_3d_support" class="modal-btn" target="_blank">✈️ Заказать в Telegram</a>
+                `;
+                modal.classList.add('active');
+            }
+        }
+
+        closeModal.onclick = () => modal.classList.remove('active');
+        window.onclick = (e) => { if (e.target === modal) modal.classList.remove('active'); };
+
+        document.querySelectorAll('.catalog-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const productId = item.getAttribute('data-product');
+                openProduct(productId);
+            });
+        });
+    </script>
+</body>
+</html>
