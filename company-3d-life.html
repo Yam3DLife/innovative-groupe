@@ -267,7 +267,7 @@
 <body>
     <header class="main-header">
         <div class="container">
-            <div class="header-left">
+            <a href="index.html" class="header-left">
                 <div class="logo-icon">
                     <img src="images/logo-3dlife.png" alt="3D Life ЯМ" width="40" height="40">
                 </div>
@@ -275,7 +275,7 @@
                     <h2>3D Life<span>ЯМ</span></h2>
                     <p>3D печать и моделирование</p>
                 </div>
-            </div>
+            </a>
             <div class="header-nav">
                 <ul class="nav-links">
                     <li><a href="index.html">Главная</a></li>
@@ -371,7 +371,7 @@
 
                 <div style="text-align: center;">
                     <a href="catalog.html" class="btn-all" id="allProductsBtn">📦 Все товары</a>
-                    <a href="https://t.me/mikha_hah" class="btn-all" id="orderModelBtn">🛠️ Заказать модель на заказ</a>
+                    <a href="https://t.me/mikha_hah" class="btn-all" id="orderModelBtn" target="_blank">🛠️ Заказать модель на заказ</a>
                     <a href="https://t.me/mikha_hah" class="btn-all" target="_blank">✈️ Написать в Telegram</a>
                 </div>
             </div>
@@ -415,7 +415,7 @@
                     <a href="https://t.me/Wd_Life" class="service-btn" target="_blank">
                         <img src="images/tg_logo.png" alt="Telegram"> Telegram-канал
                     </a>
-                    <a href="@mikha_hah" class="service-btn" target="_blank">
+                    <a href="https://t.me/mikha_hah" class="service-btn" target="_blank">
                         <img src="images/tg_logo.png" alt="Telegram"> Telegram-чат
                     </a>
                     <a href="https://vk.com/3d_life_print" class="service-btn" target="_blank">
@@ -453,7 +453,7 @@
                 <div class="footer-contact">
                     <h4>Контакты 3D Life ЯМ</h4>
                     <p>Email: yam.3dlife@yandex.ru</p>
-                    <p>Telegram: https://t.me/mikha_hah</p>
+                    <p>Telegram: @mikha_hah</p>
                 </div>
             </div>
         </div>
@@ -502,7 +502,7 @@
                     <div class="modal-price">${product.price}</div>
                     <div class="modal-desc">${product.desc}</div>
                     <div class="modal-desc"><strong>Характеристики:</strong><br>${product.specs}</div>
-                    <a href="https://t.me/your_3d_support" class="modal-btn" target="_blank">✈️ Заказать в Telegram</a>
+                    <a href="https://t.me/mikha_hah" class="modal-btn" target="_blank">✈️ Заказать в Telegram</a>
                 `;
                 modal.classList.add('active');
             }
@@ -525,12 +525,6 @@
                 const productId = card.getAttribute('data-product');
                 openProduct(productId);
             });
-        });
-
-        // Кнопка "Заказать модель на заказ"
-        document.getElementById('orderModelBtn').addEventListener('click', (e) => {
-            e.preventDefault();
-            alert('Для заказа модели напишите нам в Telegram: @your_3d_support');
         });
     </script>
 </body>
