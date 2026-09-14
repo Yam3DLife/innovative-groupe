@@ -18,7 +18,7 @@ body {
     padding: 0 20px;
 }
 
-/* ===== ЕДИНЫЙ HEADER ДЛЯ ВСЕХ СТРАНИЦ ===== */
+/* ===== HEADER ===== */
 .main-header {
     padding: 15px 0;
     border-bottom: 1px solid rgba(0, 180, 216, 0.2);
@@ -37,7 +37,6 @@ body {
     gap: 20px;
 }
 
-/* Кликабельный логотип */
 a.header-left {
     display: flex;
     align-items: center;
@@ -50,15 +49,6 @@ a.header-left {
 
 a.header-left:hover {
     opacity: 0.9;
-    text-decoration: none !important;
-    color: #ffffff !important;
-}
-
-a.header-left:link,
-a.header-left:visited,
-a.header-left:active {
-    color: #ffffff !important;
-    text-decoration: none !important;
 }
 
 .header-left {
@@ -126,7 +116,8 @@ a.header-left:active {
     border-radius: 8px;
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
     background: rgba(0, 180, 216, 0.2);
     color: #00b4d8;
 }
@@ -147,7 +138,7 @@ a.header-left:active {
     box-shadow: 0 5px 20px rgba(0, 180, 216, 0.4);
 }
 
-/* ===== Hero секция (главная) ===== */
+/* ===== HERO ===== */
 .hero {
     padding: 80px 0;
     position: relative;
@@ -250,7 +241,7 @@ a.header-left:active {
     right: 0;
 }
 
-/* ===== Секции ===== */
+/* ===== СЕКЦИИ ===== */
 .about {
     padding: 80px 0;
     background: rgba(255, 255, 255, 0.02);
@@ -308,7 +299,7 @@ h2 {
     color: #00b4d8;
 }
 
-/* ===== Превью компаний ===== */
+/* ===== ПРЕВЬЮ КОМПАНИЙ ===== */
 .preview-companies {
     padding: 80px 0;
 }
@@ -359,7 +350,7 @@ h2 {
     font-weight: 600;
 }
 
-/* ===== Страница списка компаний ===== */
+/* ===== СПИСОК КОМПАНИЙ ===== */
 .page-header {
     padding: 60px 0 40px;
     text-align: center;
@@ -440,7 +431,7 @@ h2 {
     opacity: 0.8;
 }
 
-/* ===== Страница компании ===== */
+/* ===== СТРАНИЦА КОМПАНИИ ===== */
 .company-hero {
     padding: 60px 0;
     text-align: center;
@@ -789,7 +780,8 @@ footer {
     color: #00b4d8;
 }
 
-.footer-links h4, .footer-contact h4 {
+.footer-links h4,
+.footer-contact h4 {
     margin-bottom: 15px;
     color: #00b4d8;
 }
@@ -918,6 +910,22 @@ footer {
     flex: 1;
 }
 
+/* ===== БАННЕР HOTVPN (КРАСНЫЙ) ===== */
+.urgent-news-banner.urgent-hotvpn {
+    background: linear-gradient(135deg, rgba(231, 76, 60, 0.4), rgba(192, 57, 43, 0.3));
+    border-color: #c0392b;
+    animation: pulse-border-hot 1.8s infinite;
+}
+
+.urgent-news-banner.urgent-hotvpn:hover {
+    background: linear-gradient(135deg, rgba(231, 76, 60, 0.55), rgba(192, 57, 43, 0.4));
+    box-shadow: 0 10px 30px rgba(192, 57, 43, 0.5);
+}
+
+.urgent-news-banner.urgent-hotvpn .urgent-badge {
+    background: #c0392b;
+}
+
 @keyframes pulse-border {
     0%, 100% { border-color: #e74c3c; }
     50% { border-color: #ff6b6b; }
@@ -928,16 +936,19 @@ footer {
     50% { opacity: 0.6; }
 }
 
+@keyframes pulse-border-hot {
+    0%, 100% { border-color: #c0392b; box-shadow: 0 0 0 rgba(192, 57, 43, 0); }
+    50% { border-color: #ff3333; box-shadow: 0 0 20px rgba(255, 51, 51, 0.6); }
+}
+
 /* ===== СТРАНИЦА НОВОСТИ ===== */
 .news-message {
     background: rgba(255, 255, 255, 0.03);
     border-left: 4px solid #e74c3c;
     border-radius: 16px;
     padding: 40px;
-    margin: 40px 0;
+    margin: 40px auto;
     max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .news-actions {
@@ -960,7 +971,6 @@ footer {
     opacity: 0.7;
 }
 
-/* Плашка о закрытии (мигает) */
 .closed-banner {
     display: flex;
     align-items: center;
@@ -996,7 +1006,6 @@ footer {
     opacity: 0.8;
 }
 
-/* Мигающая надпись КОМПАНИЯ ЗАКРЫТА */
 .closed-flash {
     display: block;
     text-align: center;
@@ -1025,14 +1034,12 @@ footer {
     }
 }
 
-/* Красная метка в мета-информации */
 .meta-closed {
     background: rgba(231, 76, 60, 0.3) !important;
     color: #ff6b6b !important;
     font-weight: 600;
 }
 
-/* Карточка закрытой компании в списке */
 .company-item.closed {
     border-color: rgba(231, 76, 60, 0.3);
     background: rgba(231, 76, 60, 0.05);
@@ -1060,134 +1067,6 @@ footer {
     margin-top: 10px;
 }
 
-/* ===== АДАПТИВНОСТЬ ===== */
-@media (max-width: 768px) {
-    .hero .container {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .hero-content p {
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
-    .about-grid,
-    .description-grid,
-    .company-item {
-        grid-template-columns: 1fr;
-        flex-direction: column;
-    }
-    
-    .header-nav {
-        flex-direction: column;
-        width: 100%;
-    }
-    
-    .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .main-header .container {
-        flex-direction: column;
-    }
-    
-    .company-item {
-        text-align: center;
-    }
-    
-    .company-logo {
-        margin: 0 auto;
-    }
-    
-    .company-logo img {
-        width: 100px;
-        height: 100px;
-    }
-    
-    .company-icon img {
-        width: 80px;
-        height: 80px;
-    }
-    
-    .tariffs-grid-2col {
-        grid-template-columns: 1fr;
-    }
-    
-    .steps-grid {
-        grid-template-columns: 1fr;
-    }
-    
-    .connect-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    h2 {
-        font-size: 28px;
-    }
-    
-    .hero-content h1 {
-        font-size: 32px;
-    }
-    
-    .company-hero h1 {
-        font-size: 32px;
-    }
-    
-    .urgent-news-banner {
-        flex-direction: column;
-        text-align: center;
-        gap: 10px;
-    }
-    
-    .news-message {
-        padding: 25px;
-    }
-    
-    .news-actions {
-        flex-direction: column;
-        align-items: center;
-    }
-    
-    .closed-banner {
-        flex-direction: column;
-        text-align: center;
-        padding: 15px 20px;
-    }
-    
-    .closed-banner-text {
-        text-align: center;
-    }
-    
-    .closed-flash {
-        font-size: 24px;
-        letter-spacing: 2px;
-        padding: 12px 20px;
-    }
-
-    /* ===== БАННЕР HOTVPN НА ГЛАВНОЙ (краснее) ===== */
-.urgent-news-banner.urgent-hotvpn {
-    background: linear-gradient(135deg, rgba(231, 76, 60, 0.4), rgba(192, 57, 43, 0.3));
-    border-color: #c0392b;
-    animation: pulse-border-hot 1.8s infinite;
-}
-
-.urgent-news-banner.urgent-hotvpn:hover {
-    background: linear-gradient(135deg, rgba(231, 76, 60, 0.55), rgba(192, 57, 43, 0.4));
-    box-shadow: 0 10px 30px rgba(192, 57, 43, 0.5);
-}
-
-.urgent-news-banner.urgent-hotvpn .urgent-badge {
-    background: #c0392b;
-}
-
-@keyframes pulse-border-hot {
-    0%, 100% { border-color: #c0392b; box-shadow: 0 0 0 rgba(192, 57, 43, 0); }
-    50% { border-color: #ff3333; box-shadow: 0 0 20px rgba(255, 51, 51, 0.6); }
-}
-
 /* ===== ПРИОСТАНОВЛЕННАЯ КОМПАНИЯ (HotVPN) ===== */
 .company-icon.paused img {
     filter: brightness(0.6) sepia(1) hue-rotate(-30deg) saturate(3);
@@ -1200,7 +1079,6 @@ footer {
     opacity: 0.8;
 }
 
-/* Плашка о приостановке (мигает) */
 .paused-banner {
     display: flex;
     align-items: center;
@@ -1237,7 +1115,6 @@ footer {
     color: #ff6b6b;
 }
 
-/* Мигающая надпись ВРЕМЕННО ПРИОСТАНОВЛЕНО */
 .paused-flash {
     display: block;
     text-align: center;
@@ -1266,14 +1143,12 @@ footer {
     }
 }
 
-/* Жёлтая метка в мета-информации */
 .meta-paused {
     background: rgba(231, 76, 60, 0.4) !important;
     color: #ff6b6b !important;
     font-weight: 600;
 }
 
-/* Карточка HotVPN в списке компаний */
 .company-item.paused {
     border-color: rgba(231, 76, 60, 0.4);
     background: rgba(231, 76, 60, 0.08);
@@ -1300,21 +1175,83 @@ footer {
     animation: blink 1.5s infinite;
 }
 
+/* ===== АДАПТИВНОСТЬ ===== */
 @media (max-width: 768px) {
-    .paused-banner {
+    .hero .container {
         flex-direction: column;
         text-align: center;
-        padding: 15px 20px;
     }
-    
-    .paused-banner-text {
+
+    .hero-content p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .about-grid,
+    .description-grid,
+    .company-item {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+    }
+
+    .header-nav {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .main-header .container {
+        flex-direction: column;
+    }
+
+    .company-item {
         text-align: center;
     }
-    
-    .paused-flash {
-        font-size: 22px;
-        letter-spacing: 1px;
-        padding: 12px 20px;
+
+    .company-logo {
+        margin: 0 auto;
     }
-}
-}
+
+    .company-logo img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .company-icon img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .tariffs-grid-2col {
+        grid-template-columns: 1fr;
+    }
+
+    .steps-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .connect-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+    }
+
+    .company-hero h1 {
+        font-size: 32px;
+    }
+
+    .urgent-news-banner {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
