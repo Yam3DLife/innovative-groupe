@@ -10,6 +10,7 @@ body {
     color: #ffffff;
     line-height: 1.6;
     min-height: 100vh;
+    padding-top: 80px;
 }
 
 .container {
@@ -22,9 +23,11 @@ body {
 .main-header {
     padding: 15px 0;
     border-bottom: 1px solid rgba(0, 180, 216, 0.2);
-    position: sticky;
+    position: fixed;
     top: 0;
-    background: rgba(10, 14, 42, 0.95);
+    left: 0;
+    width: 100%;
+    background: rgba(10, 14, 42, 0.98);
     backdrop-filter: blur(10px);
     z-index: 1000;
 }
@@ -918,7 +921,6 @@ footer {
     flex: 1;
 }
 
-/* ===== БАННЕР HOTVPN (КРАСНЫЙ) ===== */
 .urgent-news-banner.urgent-hotvpn {
     background: linear-gradient(135deg, rgba(231, 76, 60, 0.4), rgba(192, 57, 43, 0.3));
     border-color: #c0392b;
@@ -1075,7 +1077,7 @@ footer {
     margin-top: 10px;
 }
 
-/* ===== ПРИОСТАНОВЛЕННАЯ КОМПАНИЯ (HotVPN) ===== */
+/* ===== ПРИОСТАНОВЛЕННАЯ КОМПАНИЯ ===== */
 .company-icon.paused img {
     filter: brightness(0.6) sepia(1) hue-rotate(-30deg) saturate(3);
     opacity: 0.6;
@@ -1185,6 +1187,10 @@ footer {
 
 /* ===== АДАПТИВНОСТЬ ===== */
 @media (max-width: 768px) {
+    body {
+        padding-top: 130px;
+    }
+
     .hero .container {
         flex-direction: column;
         text-align: center;
@@ -1205,15 +1211,27 @@ footer {
     .header-nav {
         flex-direction: column;
         width: 100%;
+        gap: 15px;
     }
 
     .nav-links {
         flex-wrap: wrap;
         justify-content: center;
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+        padding: 6px 10px;
     }
 
     .main-header .container {
         flex-direction: column;
+        gap: 12px;
+    }
+
+    .main-header {
+        padding: 12px 0;
     }
 
     .company-item {
@@ -1234,26 +1252,4 @@ footer {
         height: 80px;
     }
 
-    .tariffs-grid-2col {
-        grid-template-columns: 1fr;
-    }
-
-    .steps-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .connect-buttons {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    h2 {
-        font-size: 28px;
-    }
-
-    .hero-content h1 {
-        font-size: 32px;
-    }
-
-    .company-hero h1 {
-        font
+    .
