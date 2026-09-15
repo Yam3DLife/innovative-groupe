@@ -1,2 +1,2 @@
-# innovative-groupe
-Сайт компании Innovative Groupe
+# innovative-group
+Сайт компании Innovative Group
