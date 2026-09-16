@@ -14,7 +14,6 @@ body {
     color: #ffffff;
     line-height: 1.6;
     min-height: 100vh;
-    padding-top: 80px;
 }
 
 .container {
@@ -25,15 +24,11 @@ body {
 
 /* ===== HEADER ===== */
 .main-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    position: static;
     width: 100%;
     padding: 15px 0;
     background: #0a0e2a;
     border-bottom: 1px solid rgba(0, 180, 216, 0.2);
-    z-index: 9999;
 }
 
 .main-header .container {
@@ -965,10 +960,6 @@ footer {
 
 /* ===== МОБИЛЬНАЯ ВЕРСИЯ ===== */
 @media (max-width: 768px) {
-    body {
-        padding-top: 150px;
-    }
-
     .main-header {
         padding: 10px 0;
     }
