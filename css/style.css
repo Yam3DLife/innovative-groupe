@@ -15,7 +15,6 @@ body {
     color: #ffffff;
     line-height: 1.6;
     min-height: 100vh;
-    padding-top: 80px;
 }
 
 .container {
@@ -27,11 +26,7 @@ body {
 /* ===== HEADER (ФИКСИРОВАННЫЙ) ===== */
 .main-header {
     position: static;
-    top: 0;
-    left: 0;
-    right: 0;
     width: 100%;
-    height: auto;
     padding: 15px 0;
     background: #0a0e2a;
     border-bottom: 1px solid rgba(0, 180, 216, 0.2);
