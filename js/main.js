@@ -9,18 +9,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Добавляем класс при скролле для header
-window.addEventListener('scroll', () => {
-    const header = document.querySelector('.main-header');
-    if (header) {
-        if (window.scrollY > 50) {
-            header.style.padding = '10px 0';
-        } else {
-            header.style.padding = '15px 0';
-        }
-    }
-});
-
 // Анимация появления элементов при скролле
 const observerOptions = {
     threshold: 0.1,
